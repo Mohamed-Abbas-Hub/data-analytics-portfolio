@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohamed Abbas — Datenanalyst mit Schwerpunkt auf Power BI, SQL, Python, Reporting und Datenqualität.">
+  <meta name="theme-color" content="#0b1120">
+  <title>Mohamed Abbas | Datenanalyst</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #111c30;
+      --panel-2: #17243a;
+      --line: rgba(148, 163, 184, .17);
+      --text: #f8fafc;
+      --muted: #a9b8cc;
+      --accent: #38bdf8;
+      --accent-2: #0ea5e9;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10; background: rgba(11,17,32,.88);
+      backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);
+    }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.45rem; font-weight: 800; letter-spacing: -.06em; }
+    .logo span { color: var(--accent); }
+    nav { display: flex; gap: 30px; align-items: center; }
+    nav a { color: #cbd5e1; font-size: .92rem; transition: color .2s; }
+    nav a:hover { color: var(--accent); }
+    .menu { display: none; border: 1px solid var(--line); background: var(--panel); color: white; padding: 8px 12px; border-radius: 9px; }
+    .hero { padding: 100px 0 82px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 58px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #a7f3d0; font-size: .78rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 5px rgba(52,211,153,.12); }
+    h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.065em; margin: 22px 0 12px; }
+    h1 span { display: block; color: var(--accent); }
+    .lead { max-width: 590px; color: #c2cede; font-size: 1.08rem; margin: 22px 0 30px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 10px; font-weight: 700; font-size: .92rem; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { background: var(--accent-2); color: #031321; }
+    .secondary { border: 1px solid #52647d; color: #e2e8f0; }
+    .hero-visual { background: linear-gradient(145deg, #172b46, #101a2d); border: 1px solid var(--line); border-radius: 22px; padding: 22px; box-shadow: 0 24px 80px rgba(0,0,0,.25); }
+    .visual-top { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; font-size: .8rem; margin-bottom: 20px; }
+    .window-dots { display: flex; gap: 6px; }
+    .window-dots i { width: 7px; height: 7px; border-radius: 50%; background: #64748b; }
+    .metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .metric { padding: 17px; background: rgba(8,17,32,.6); border: 1px solid var(--line); border-radius: 13px; }
+    .metric small { display: block; color: #93a6bd; font-size: .72rem; }
+    .metric strong { display: block; font-size: 1.25rem; margin-top: 5px; }
+    .chart { height: 142px; margin-top: 13px; padding: 14px 10px 0; background: rgba(8,17,32,.55); border: 1px solid var(--line); border-radius: 13px; display: flex; align-items: end; gap: 9px; overflow: hidden; }
+    .bar { flex: 1; min-width: 8px; background: linear-gradient(180deg, #38bdf8, #0369a1); border-radius: 5px 5px 0 0; opacity: .9; }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-kicker { color: var(--accent); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; }
+    h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -.045em; margin: 9px 0 14px; }
+    .section-intro { color: var(--muted); max-width: 690px; margin: 0 0 34px; }
+    .skills { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+    .skill-card, .project-card, .experience-card { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 22px; }
+    .skill-card h3, .project-card h3, .experience-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .skill-card p, .project-card p, .experience-card p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .skill-icon { color: var(--accent); font-size: 1.3rem; margin-bottom: 12px; }
+    .projects { display: grid; grid-template-columns: repeat(2,1fr); gap: 17px; }
+    .project-card { padding: 0; overflow: hidden; }
+    .project-art { min-height: 150px; padding: 22px; display: flex; align-items: end; background: radial-gradient(circle at 80% 20%, rgba(56,189,248,.25), transparent 35%), linear-gradient(135deg,#1d3554,#101a2b); }
+    .project-art span { color: #bae6fd; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .project-content { padding: 21px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 15px 0 0; }
+    .tag { color: #bae6fd; background: rgba(14,165,233,.12); border: 1px solid rgba(56,189,248,.18); border-radius: 99px; padding: 4px 9px; font-size: .72rem; }
+    .status { display: inline-block; color: #fde68a; background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2); padding: 4px 9px; border-radius: 99px; font-size: .7rem; margin-top: 14px; }
+    .experience { display: grid; gap: 14px; }
+    .experience-card { display: grid; grid-template-columns: 190px 1fr; gap: 20px; }
+    .experience-date { color: var(--accent); font-size: .82rem; font-weight: 700; }
+    .experience-card ul { margin: 9px 0 0; padding-left: 19px; color: var(--muted); font-size: .9rem; }
+    .about-box { background: linear-gradient(135deg,#14243b,#101a2b); border: 1px solid var(--line); border-radius: 18px; padding: 30px; color: #c5d2e2; max-width: 850px; }
+    .contact { text-align: center; background: radial-gradient(ellipse at 50% 100%, rgba(14,165,233,.12), transparent 55%); }
+    .contact .section-intro { margin-left: auto; margin-right: auto; }
+    footer { padding: 25px 0; border-top: 1px solid var(--line); color: #8293aa; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .hero { grid-template-columns: 1fr; padding: 70px 0 55px; gap: 35px; }
+      .skills { grid-template-columns: repeat(2,1fr); }
+      nav { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 18px 22px; background: #0b1120; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 16px; }
+      nav.open { display: flex; }
+      .menu { display: block; }
+      section { padding: 58px 0; }
+    }
+    @media (max-width: 540px) {
+      .skills, .projects { grid-template-columns: 1fr; }
+      .experience-card { grid-template-columns: 1fr; gap: 7px; }
+      h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#home">MA<span>.</span></a>
+      <button class="menu" aria-label="Navigation öffnen oder schließen" onclick="document.querySelector('nav').classList.toggle('open')">Menu</button>
+      <nav>
+        <a href="#home">Startseite</a><a href="#about">Über mich</a><a href="#skills">Kenntnisse</a><a href="#projects">Projekte</a><a href="#experience">Berufserfahrung</a><a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Portfolio Datenanalyse</div>
+        <h1>Hallo, ich bin Mohamed Abbas.<span>Datenanalyst.</span></h1>
+        <p class="lead">Ich verwandle operative und betriebswirtschaftliche Daten mit Power BI, SQL und Python in aussagekräftige Erkenntnisse. Mein Fokus liegt auf zuverlässigem Reporting, hoher Datenqualität und praxisnahen Lösungen für fundierte Entscheidungen.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Projekte ansehen <span aria-hidden="true">&nbsp;↗</span></a>
+          <a class="btn secondary" href="mailto:mohamedabbas0713@gmail.com">Kontakt aufnehmen</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Illustrative analytics dashboard">
+        <div class="visual-top"><span>ANALYSEÜBERSICHT</span><span class="window-dots"><i></i><i></i><i></i></span></div>
+        <div class="metric-grid">
+          <div class="metric"><small>DATENQUALITÄT</small><strong>Präzision im Fokus</strong></div>
+          <div class="metric"><small>BERICHTSWESEN</small><strong>Umsetzbare Erkenntnisse</strong></div>
+        </div>
+        <div class="chart" aria-hidden="true">
+          <div class="bar" style="height:35%"></div><div class="bar" style="height:52%"></div><div class="bar" style="height:43%"></div><div class="bar" style="height:68%"></div><div class="bar" style="height:58%"></div><div class="bar" style="height:82%"></div><div class="bar" style="height:72%"></div><div class="bar" style="height:95%"></div><div class="bar" style="height:77%"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-kicker">Über mich</div>
+        <h2>Daten mit Entscheidungen verbinden.</h2>
+        <div class="about-box">
+          Ich bin Datenanalyst und habe einen Masterabschluss der TU Darmstadt. Ich bringe praktische Erfahrung in der Analyse operativer Daten, Business Intelligence und digitaler Marketinganalyse mit. In meiner aktuellen Tätigkeit bei Swissport entwickle ich Power-BI-Dashboards, unterstütze Prozesse zur Datenqualität und wirke an der Verbesserung operativer Abläufe mit. Besonders gerne bereite ich komplexe Informationen so auf, dass daraus verständliche Berichte und konkrete Erkenntnisse entstehen.
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-kicker">Technisches Kompetenzprofil</div>
+        <h2>Kenntnisse und Technologien</h2>
+        <p class="section-intro">Tools und Methoden, mit denen ich Daten aufbereite, analysiere, visualisiere und verständlich vermittle.</p>
+        <div class="skills">
+          <article class="skill-card"><div class="skill-icon">▦</div><h3>BI und Reporting</h3><p>Power BI, DAX, Looker Studio, KPI reporting and Dashboardentwicklung.</p></article>
+          <article class="skill-card"><div class="skill-icon">⌘</div><h3>Datenanalyse</h3><p>SQL, Python, Pandas, NumPy, Datenbereinigung und -validierung.</p></article>
+          <article class="skill-card"><div class="skill-icon">▤</div><h3>Datenbanken und Cloud</h3><p>Snowflake, AWS, Datenaufnahme und semistrukturierte Daten.</p></article>
+          <article class="skill-card"><div class="skill-icon">⟳</div><h3>Datenpipelines</h3><p>ETL-/ELT-Konzepte, Apache Airflow und Datenaufbereitungsprozesse.</p></article>
+          <article class="skill-card"><div class="skill-icon">⚙</div><h3>Automatisierung</h3><p>Alteryx, n8n and Power Automate.</p></article>
+          <article class="skill-card"><div class="skill-icon">◎</div><h3>Business Analytics</h3><p>Operative Kennzahlen, Marketinganalyse, Google Ads und Google Analytics.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-kicker">Ausgewählte Arbeiten</div>
+        <h2>Projekte</h2>
+        <p class="section-intro">Eine Auswahl praxisnaher Analyseprojekte. Detaillierte Projektseiten, Datensätze und Ergebnisse ergänze ich nach Abschluss der jeweiligen Projekte.</p>
+        <div class="projects">
+          <article class="project-card"><div class="project-art"><span>Business Intelligence</span></div><div class="project-content"><h3>Dashboard zur Vertriebsleistung</h3><p>Analyse von Umsatzentwicklungen, Vertriebsleistung und Geschäftskennzahlen in einem interaktiven Dashboard.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">DAX</span></div><span class="status">Geplantes Projekt</span></div></article>
+          <article class="project-card"><div class="project-art"><span>Kundenanalyse</span></div><div class="project-content"><h3>Analyse der Kundenbindung</h3><p>Analyse des Kundenverhaltens, der Kundenbindung und von Kohorten, um Verbesserungspotenziale zu erkennen.</p><div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Kohortenanalyse</span></div><span class="status">Geplantes Projekt</span></div></article>
+          <article class="project-card"><div class="project-art"><span>Marketinganalyse</span></div><div class="project-content"><h3>Analyse von Marketingkampagnen</h3><p>Bewertung der Kampagnenleistung, der Conversion-Kennzahlen und der Wirksamkeit verschiedener Kanäle.</p><div class="tags"><span class="tag">Python</span><span class="tag">Statistik</span><span class="tag">A/B testing</span></div><span class="status">Geplantes Projekt</span></div></article>
+          <article class="project-card"><div class="project-art"><span>Finanzanalyse</span></div><div class="project-content"><h3>Analyse der finanziellen Leistung</h3><p>Aufbereitung von Umsatz, Kosten, Rentabilität und finanziellen Entwicklungen in einem Bericht.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">Data analysis</span></div><span class="status">Geplantes Projekt</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-kicker">Beruflicher Werdegang</div>
+        <h2>Berufserfahrung</h2>
+        <div class="experience">
+          <article class="experience-card"><div class="experience-date">03/2026 – Present</div><div><h3>Werkstudent Import- und Exportdaten · Swissport</h3><ul><li>Entwicklung von drei Power-BI-Dashboards für Import, Export und übergreifende operative Kennzahlen.</li><li>Überwachung von Luftfrachtstatusmeldungen sowie Prüfung und Korrektur von Daten in operativen Systemen.</li><li>Unterstützung digitaler Prozesse zur Fahrerregistrierung, um Papieraufwand und Wartezeiten zu reduzieren.</li></ul></div></article>
+          <article class="experience-card"><div class="experience-date">05/2025 – 03/2026</div><div><h3>Digital Marketing Analyst · Eastern Top Trading</h3><ul><li>Analyse der Google-Ads-Kampagnenleistung anhand von Klicks, Klickrate, Conversions und Kosten pro Conversion.</li><li>Berichterstattung zur Kampagnen- und SEO-Leistung sowie Identifizierung von Optimierungsmöglichkeiten.</li></ul></div></article>
+          <article class="experience-card"><div class="experience-date">04/2024 – 03/2025</div><div><h3>Werkstudent Operations und Passagierdienst · AHS</h3><ul><li>Prüfung und Korrektur von Passagierdaten in Amadeus Altéa unter Berücksichtigung der Datenschutzanforderungen.</li><li>Analyse von Passagierströmen, Wartezeiten am Check-in und operativen Flugkennzahlen.</li></ul></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="section-kicker">Kontakt</div>
+        <h2>Lassen Sie uns in Kontakt treten.</h2>
+        <p class="section-intro">Sie interessieren sich für eine Zusammenarbeit oder haben eine passende Möglichkeit in den Bereichen Datenanalyse, Business Intelligence oder Reporting? Ich freue mich auf Ihre Nachricht.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="mailto:mohamedabbas0713@gmail.com">E-Mail schreiben</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/mohamed-abbas-474748425/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© 2026 Mohamed Abbas</span><span>Portfolio Datenanalyse</span></div></footer>
+</body>
+</html>
